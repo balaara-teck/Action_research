@@ -1,0 +1,35 @@
+# Byte-compiled files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environment
+venv/
+env/
+v/
+# Django-specific files
+*.sqlite3
+db.sqlite3
+media/
+staticfiles/
+*.log
+
+# IDE and editor-specific files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Python cache and virtual environment settings
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Secret files and environment settings
+.env
+*.pem
+
+# Compiled files and caches
+*.egg-info/
+dist/
+build/

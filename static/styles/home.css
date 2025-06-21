@@ -1,0 +1,240 @@
+/* General Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+/* Research Card Hover */
+.research-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.research-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive - Remove Hover on Small Screens */
+@media (max-width: 640px) {
+  .research-card:hover {
+    transform: none;
+    box-shadow: none;
+  }
+}
+
+/* Sidebar Links */
+.sidebar-link:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+  color: #2563eb;
+}
+
+/* Read More Link */
+.read_more:hover {
+  color: blue;
+  text-decoration: underline;
+}
+
+/* Navbar Brand */
+.navbar-brand span {
+  font-size: 1.5rem;
+}
+
+/* Avatar */
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Floating WhatsApp Button */
+.floating-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: gray;
+  color: black;
+  font-size: 24px;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  border: 1px salmon solid;
+  text-align: center;
+  line-height: 55px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+  z-index: 999;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Research Badges */
+.researcher-badge {
+  color: #173c6e;
+  background-color: #dbeafe;
+  font-weight: 900;
+}
+.date-badge {
+  color: #166534;
+  background-color: #d1fae5;
+}
+
+/* Share Button */
+.whatsapp-share-btn {
+  background-color: #2563eb;
+  color: white;
+}
+.whatsapp-share-btn:hover {
+  background-color: #1d4ed8;
+}
+
+/* Chat Button */
+.chat-button {
+  background-color: #e5e7eb;
+  color: #1f2937;
+}
+.chat-button:hover {
+  background-color: #d1d5db;
+}
+
+/* ========================== */
+/*         Dark Mode          */
+/* ========================== */
+
+body.dark {
+  background-color: #111827;
+  color: #d1d5db;
+}
+
+/* Sidebar */
+body.dark #sidebar {
+  background-color: #1f2937;
+  border-right: 1px solid #374151;
+}
+body.dark .sidebar-link {
+  color: #d1d5db;
+}
+body.dark .sidebar-link:hover {
+  background-color: #374151;
+}
+
+/* Sidebar Headings */
+body.dark h2 {
+  background-color: #111827;
+  color: #d1d5db;
+}
+
+/* Navbar */
+body.dark nav {
+  background-color: #1f2937;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+body.dark nav a {
+  color: #d1d5db;
+}
+body.dark nav a:hover {
+  color: #60a5fa;
+}
+
+/* Search Bar */
+body.dark input[type="text"] {
+  background-color: #374151;
+  border-color: #4b5563;
+  color: #ffffff;
+}
+body.dark input[type="text"]::placeholder {
+  color: #9ca3af;
+}
+
+/* Search Button */
+body.dark button[type="submit"] {
+  background-color: #2563eb;
+  color: #ffffff;
+}
+body.dark button[type="submit"]:hover {
+  background-color: #1d4ed8;
+}
+
+/* Theme Toggle */
+body.dark #theme-toggle {
+  background-color: #374151;
+  color: #e5e7eb;
+}
+
+/* Floating Button (Dark Mode) */
+body.dark .floating-btn {
+  background-color: #10b981;
+  color: #ffffff;
+  border-color: transparent;
+}
+body.dark .floating-btn:hover {
+  background-color: #059669;
+}
+
+/* Link Hover in Dark Mode */
+body.dark a:hover {
+  color: #60a5fa;
+}
+
+/* Research Card (Dark Mode) */
+body.dark .research-card {
+  background-color: #1f2937;
+  border: 1px solid #374151;
+}
+
+/* Read More */
+body.dark .read_more {
+  color: #d1d5db;
+}
+body.dark .read_more:hover {
+  color: #93c5fd;
+}
+
+/* Share Button */
+body.dark .whatsapp-share-btn {
+  background-color: #1e40af;
+}
+body.dark .whatsapp-share-btn:hover {
+  background-color: #1e3a8a;
+}
+
+/* Chat Button (Dark) */
+body.dark .chat-button {
+  background-color: #374151;
+  color: #e5e7eb;
+}
+body.dark .chat-button:hover {
+  background-color: #4b5563;
+}
+
+/* Researcher Badge Dark */
+body.dark .researcher-badge {
+  color: #93c5fd;
+  background-color: #1e3a8a;
+}
+
+/* Date Badge Dark */
+body.dark .date-badge {
+  color: #86efac;
+  background-color: #064e3b;
+}
+
+body,
+nav,
+.sidebar-link,
+input[type="text"],
+button[type="submit"],
+#theme-toggle,
+.research-card,
+.read_more,
+.whatsapp-share-btn,
+.chat-button,
+.researcher-badge,
+.date-badge {
+  transition: background-color 0.5s ease, color 0.6s ease, border-color 0.7s ease;
+}
+

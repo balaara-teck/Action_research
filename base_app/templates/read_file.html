@@ -1,0 +1,15 @@
+{% extends "home.html" %}
+{% block title %}Reading File{% endblock %}
+{% block content %}
+<div class="file-content-container" style="margin: 20px; padding: 20px; background: #f8f9fa;">
+  <pre style="font-family: 'Courier New', monospace; 
+              font-size: 14px; 
+              white-space: pre-wrap;
+              background: white;
+              padding: 15px;
+              border: 1px solid #ddd;
+              border-radius: 4px;">
+{{ file|safe }}
+  </pre>
+</div>
+{% endblock %}

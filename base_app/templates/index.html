@@ -8,45 +8,27 @@
 {% if uploaded_files %}
     {% for file in uploaded_files %}
         <!-- Research Card -->
-        <div class="research-card bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden mb-6">
-            <div class="h-10 sm:h-15 md:h-20 bg-gradient-to-r from-blue-500 to-purple-500"></div>
+        <div class="research-card bg-white-20 dark:bg-gray-800 rounded-xl shadow-md overflow-hidden mb-6">
+            <div class="h-7 sm:h-11 md:h-15 bg-gradient-to-r text-red-500 from-gray-100 to-gray-500">ID-{{file.id}}</div>
             <div class="p-3">
                 <h2 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">{{file.field}}</h2>
                 <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">
                     <a class="read_more" href="{% url 'read' file.pk %}">{{ file.topic }}</a>
                 </p>
                 <div class="flex items-center space-x-2 mb-4">
-                    <span class="researcher-badge inline-block px-3 py-1 text-xs font-medium rounded-full">
-                      Researched By: {{ file.researcher }}
-                    </span>
-                    <span class="date-badge inline-block px-3 py-1 text-xs font-medium rounded-full">
-                      Posted: {{ file.date_uploaded }}
-                    </span>
-                  </div>
-                  
-                  <div class="flex space-x-3">
-                    <a
-                      href="#"
-                      class="whatsapp-share-btn flex items-center px-4 py-2 text-sm font-medium rounded-lg transition"
-                      data-title="{{ file.title }}"
-                      data-url="{% url 'read' file.pk %}"
-                    >
-                      <!-- SVG icon -->
-                      Share
-                    </a>
-                  
-                    <button class="chat-button flex items-center px-4 py-2 text-sm font-medium rounded-lg transition">
-                      <!-- SVG icon -->
-                      Chat
-                    </button>
-                  </div>
-                  
+                  <span class="researcher-badge inline-block px-3 py-1 text-xs font-medium rounded-full">
+                    Researched By: {{ file.researcher }}
+                  </span>
+                  <span class="date-badge inline-block px-3 py-1 text-xs font-medium rounded-full">
+                    Posted: {{ file.date_uploaded }}
+                  </span>
+                </div>                            
             </div>
         </div>
 
         <!-- Inject trending topics after every 3 cards -->
         {% if show_topics and forloop.counter|divisibleby:5 %}
-        <div class="mb-6 p-4 bg-white dark:bg-gray-800 rounded-lg shadow-md">
+        <div class=" research-card mb-6 p-4 bg-white dark:bg-gray-800 rounded-lg shadow-md">
             <h2 class="text-lg font-bold text-gray-800 dark:text-white mb-3">🔥 Trending Topics</h2>
             <ul class="list-disc pl-5 space-y-1 text-sm text-gray-600 dark:text-gray-300">
                 {% for topic in trending_topics %}

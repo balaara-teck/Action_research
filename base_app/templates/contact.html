@@ -1,7 +1,7 @@
 {% extends "home.html" %}
 {% load static %}
 {% block content %}
-<section class="py-10 bg-gray-50 dark:bg-gray-900 w-full">
+<section class="contact-section py-10 bg-gray-50 dark:bg-gray-900 w-full">
   <div class="max-w-7xl mx-auto px-4">
     <div class="text-center mb-10">
       <h2 class="text-4xl font-bold text-gray-800 dark:text-white">Contact Us</h2>
@@ -10,7 +10,7 @@
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
       <!-- Contact Form -->
-      <form action="{% url 'contact' %}" method="post" class="bg-white dark:bg-gray-800 shadow-md rounded-lg p-6">
+      <form action="{% url 'contact' %}" method="post" class="contact-form bg-white dark:bg-gray-800 shadow-md rounded-lg p-6">
         {% csrf_token %}
         <div class="mb-4">
           <label for="name" class="block text-gray-700 dark:text-gray-200 font-semibold mb-1">Name</label>
@@ -28,7 +28,7 @@
       </form>
 
       <!-- Contact Info -->
-      <div class="bg-white dark:bg-gray-800 shadow-md rounded-lg p-6">
+      <div class="contact-info bg-white dark:bg-gray-800 shadow-md rounded-lg p-6">
         <h3 class="text-2xl font-semibold text-gray-800 dark:text-white mb-4">Our Info</h3>
         <ul class="space-y-4 text-gray-700 dark:text-gray-300">
           <li>
@@ -40,7 +40,7 @@
             <a href="mailto:ar4tts@gmail.com" class="text-blue-600 hover:underline">Mail Us</a>
           </li>
           <li>
-            <i class="fab fa-whatsapp"></i>
+            <i class="fab fa-whatsapp mr-2 text-green-500"></i>
             +233 266 342 915
           </li>
           <li>

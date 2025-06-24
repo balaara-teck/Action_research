@@ -238,3 +238,219 @@ button[type="submit"],
   transition: background-color 0.5s ease, color 0.6s ease, border-color 0.7s ease;
 }
 
+/* share floating button */
+.floating-share-btn {
+  position: fixed;
+  bottom: 80px;
+  right: 25px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  cursor: pointer;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+.floating-share-btn:hover {
+  transform: scale(1.1);
+}
+.share-options-float {
+  position: fixed;
+  bottom: 135px;
+  right: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  padding: 10px;
+  display: none;
+  z-index: 1000;
+}
+.share-options-float.show {
+  display: block;
+}
+.share-options-float button {
+  display: block;
+  width: 100%;
+  margin: 5px 0;
+}
+
+/* ============================
+   Contact Page - Dark Mode
+=============================== */
+
+/* Section Background */
+body.dark .contact-section {
+  background-color: #111827; /* gray-900 */
+}
+
+/* Headings */
+body.dark .contact-section h2 {
+  color: #ffffff; /* white */
+}
+
+/* Subheadings / Paragraphs */
+body.dark .contact-section p {
+  color: #d1d5db; /* gray-300 */
+}
+
+/* Form Card */
+body.dark .contact-form,
+body.dark .contact-info {
+  background-color: #1f2937; /* gray-800 */
+}
+
+/* Form Labels */
+body.dark .contact-form label {
+  color: #e5e7eb; /* gray-200 */
+}
+
+/* Form Inputs & Textareas */
+body.dark .contact-form input,
+body.dark .contact-form textarea {
+  background-color: #374151; /* gray-700 */
+  color: #ffffff; /* white */
+  border-color: #4b5563; /* gray-600 */
+}
+
+/* Contact Info Text */
+body.dark .contact-info li {
+  color: #d1d5db; /* gray-300 */
+}
+
+/* Keep text-blue-600 unchanged, unless you want to override */
+body.dark .donation-section {
+  background-color: #111827;
+}
+
+body.dark .donation-title {
+  color: #ffffff;
+}
+
+body.dark .donation-description,
+body.dark .form-label,
+body.dark .form-radio-label {
+  color: #d1d5db;
+}
+
+body.dark .donation-form {
+  background-color: #1f2937;
+}
+
+body.dark .form-input {
+  background-color: #374151;
+  border-color: #4b5563;
+  color: #ffffff;
+}
+
+body.dark .donation-info {
+  background-color: #374151;
+  color: #f9fafb;
+}
+
+/* Target the About Project section only when dark mode is active */
+body.dark section.about-project {
+  background-color: #0f172a; /* dark slate */
+  color: #f1f5f9; /* light text */
+}
+
+body.dark section.about-project h2,
+body.dark section.about-project h3 {
+  color: #ffffff; /* pure white */
+}
+
+body.dark section.about-project p,
+body.dark section.about-project li {
+  color: #e2e8f0; /* soft gray */
+}
+
+body.dark section.about-project .bg-white {
+  background-color: #1e293b; /* slightly lighter block background */
+}
+
+body.dark section.about-project ul {
+  color: #cbd5e1;
+}
+
+body.dark section.about-project a {
+  color: #60a5fa; /* blue link */
+}
+
+body.dark section.about-project a:hover {
+  color: #3b82f6;
+  text-decoration: underline;
+}
+
+/* Dark mode colors scoped to pricing page section */
+body.dark section.pricing-page {
+  background-color: #0f172a; /* dark slate bg */
+  color: #f8fafc; /* light text */
+}
+
+body.dark section.pricing-page h1,
+body.dark section.pricing-page h2,
+body.dark section.pricing-page h3 {
+  color: #ffffff;
+}
+
+body.dark section.pricing-page p {
+  color: #cbd5e1;
+}
+
+body.dark section.pricing-page .bg-white {
+  background-color: #1e293b; /* card background */
+}
+
+body.dark section.pricing-page .text-gray-800 {
+  color: #f8fafc !important;
+}
+
+body.dark section.pricing-page .text-gray-600 {
+  color: #94a3b8 !important;
+}
+
+body.dark section.pricing-page .dark\:text-white {
+  color: #ffffff !important;
+}
+
+body.dark section.pricing-page .dark\:text-gray-300 {
+  color: #d1d5db !important;
+}
+
+body.dark section.pricing-page .dark\:bg-gray-800 {
+  background-color: #1e293b !important;
+}
+
+body.dark section.pricing-page .bg-yellow-100 {
+  background-color: #facc15 !important;
+}
+
+body.dark section.pricing-page .border-yellow-500 {
+  border-color: #eab308 !important;
+}
+
+body.dark section.pricing-page .text-yellow-700 {
+  color: #78350f !important;
+}
+body.dark .payment-box {
+  background-color: #1e293b; /* dark bg */
+  border-color: #facc15;     /* soft yellow */
+  color: #f8fafc;            /* light text */
+}
+
+body.dark .payment-box h2 {
+  color: #facc15;            /* yellow title */
+}
+
+body.dark .payment-box ul li strong {
+  color: #facc15;            /* yellow for labels */
+}
+
+body.dark .payment-box p {
+  color: #e2e8f0;            /* soft light text */
+}

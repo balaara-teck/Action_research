@@ -21,3 +21,4 @@ class FileModel(models.Model):
     def __str__(self):
         return f"{self.topic} \n By {self.researcher}"
     
+ 

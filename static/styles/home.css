@@ -1,4 +1,6 @@
-/* General Reset and Base Styles */
+/* ==========================
+   Global Reset & Base Styles
+========================== */
 * {
   margin: 0;
   padding: 0;
@@ -7,43 +9,12 @@
 
 body {
   font-family: 'Inter', sans-serif;
+  transition: background-color 0.5s ease, color 0.6s ease, border-color 0.7s ease;
 }
 
-/* Research Card Hover */
-.research-card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.research-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-}
-
-/* Responsive - Remove Hover on Small Screens */
-@media (max-width: 640px) {
-  .research-card:hover {
-    transform: none;
-    box-shadow: none;
-  }
-}
-
-/* Sidebar Links */
-.sidebar-link:hover {
-  background-color: rgba(0, 0, 0, 0.05);
-  color: #2563eb;
-}
-
-/* Read More Link */
-.read_more:hover {
-  color: blue;
-  text-decoration: underline;
-}
-
-/* Navbar Brand */
-.navbar-brand span {
-  font-size: 1.5rem;
-}
-
-/* Avatar */
+/* ==========================
+   Utility Classes
+========================== */
 .avatar {
   width: 40px;
   height: 40px;
@@ -51,7 +22,47 @@ body {
   object-fit: cover;
 }
 
-/* Floating WhatsApp Button */
+.read_more:hover {
+  color: blue;
+  text-decoration: underline;
+}
+
+.navbar-brand span {
+  font-size: 1.5rem;
+}
+
+/* ==========================
+   Card Styling
+========================== */
+.research-card {
+  box-shadow: #059669 -1px -1px 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+}
+
+.research-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 640px) {
+  .research-card:hover {
+    transform: none;
+    box-shadow: none;
+  }
+}
+
+/* ==========================
+   Sidebar
+========================== */
+.sidebar-link:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+  color: #2563eb;
+}
+
+/* ==========================
+   Floating Buttons
+========================== */
 .floating-btn {
   position: fixed;
   bottom: 20px;
@@ -72,173 +83,6 @@ body {
   transition: background-color 0.3s ease;
 }
 
-/* Research Badges */
-.researcher-badge {
-  color: #173c6e;
-  background-color: #dbeafe;
-  font-weight: 900;
-}
-.date-badge {
-  color: #166534;
-  background-color: #d1fae5;
-}
-
-/* Share Button */
-.whatsapp-share-btn {
-  background-color: #2563eb;
-  color: white;
-}
-.whatsapp-share-btn:hover {
-  background-color: #1d4ed8;
-}
-
-/* Chat Button */
-.chat-button {
-  background-color: #e5e7eb;
-  color: #1f2937;
-}
-.chat-button:hover {
-  background-color: #d1d5db;
-}
-
-/* ========================== */
-/*         Dark Mode          */
-/* ========================== */
-
-body.dark {
-  background-color: #111827;
-  color: #d1d5db;
-}
-
-/* Sidebar */
-body.dark #sidebar {
-  background-color: #1f2937;
-  border-right: 1px solid #374151;
-}
-body.dark .sidebar-link {
-  color: #d1d5db;
-}
-body.dark .sidebar-link:hover {
-  background-color: #374151;
-}
-
-/* Sidebar Headings */
-body.dark h2 {
-  background-color: #111827;
-  color: #d1d5db;
-}
-
-/* Navbar */
-body.dark nav {
-  background-color: #1f2937;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-}
-body.dark nav a {
-  color: #d1d5db;
-}
-body.dark nav a:hover {
-  color: #60a5fa;
-}
-
-/* Search Bar */
-body.dark input[type="text"] {
-  background-color: #374151;
-  border-color: #4b5563;
-  color: #ffffff;
-}
-body.dark input[type="text"]::placeholder {
-  color: #9ca3af;
-}
-
-/* Search Button */
-body.dark button[type="submit"] {
-  background-color: #2563eb;
-  color: #ffffff;
-}
-body.dark button[type="submit"]:hover {
-  background-color: #1d4ed8;
-}
-
-/* Theme Toggle */
-body.dark #theme-toggle {
-  background-color: #374151;
-  color: #e5e7eb;
-}
-
-/* Floating Button (Dark Mode) */
-body.dark .floating-btn {
-  background-color: #10b981;
-  color: #ffffff;
-  border-color: transparent;
-}
-body.dark .floating-btn:hover {
-  background-color: #059669;
-}
-
-/* Link Hover in Dark Mode */
-body.dark a:hover {
-  color: #60a5fa;
-}
-
-/* Research Card (Dark Mode) */
-body.dark .research-card {
-  background-color: #1f2937;
-  border: 1px solid #374151;
-}
-
-/* Read More */
-body.dark .read_more {
-  color: #d1d5db;
-}
-body.dark .read_more:hover {
-  color: #93c5fd;
-}
-
-/* Share Button */
-body.dark .whatsapp-share-btn {
-  background-color: #1e40af;
-}
-body.dark .whatsapp-share-btn:hover {
-  background-color: #1e3a8a;
-}
-
-/* Chat Button (Dark) */
-body.dark .chat-button {
-  background-color: #374151;
-  color: #e5e7eb;
-}
-body.dark .chat-button:hover {
-  background-color: #4b5563;
-}
-
-/* Researcher Badge Dark */
-body.dark .researcher-badge {
-  color: #93c5fd;
-  background-color: #1e3a8a;
-}
-
-/* Date Badge Dark */
-body.dark .date-badge {
-  color: #86efac;
-  background-color: #064e3b;
-}
-
-body,
-nav,
-.sidebar-link,
-input[type="text"],
-button[type="submit"],
-#theme-toggle,
-.research-card,
-.read_more,
-.whatsapp-share-btn,
-.chat-button,
-.researcher-badge,
-.date-badge {
-  transition: background-color 0.5s ease, color 0.6s ease, border-color 0.7s ease;
-}
-
-/* share floating button */
 .floating-share-btn {
   position: fixed;
   bottom: 80px;
@@ -249,7 +93,7 @@ button[type="submit"],
   background-color: #007bff;
   color: white;
   border: none;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   cursor: pointer;
   z-index: 1000;
   display: flex;
@@ -257,120 +101,214 @@ button[type="submit"],
   justify-content: center;
   transition: transform 0.3s ease;
 }
+
 .floating-share-btn:hover {
   transform: scale(1.1);
 }
+
 .share-options-float {
   position: fixed;
   bottom: 135px;
   right: 20px;
   background: white;
   border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   padding: 10px;
   display: none;
   z-index: 1000;
 }
+
 .share-options-float.show {
   display: block;
 }
+
 .share-options-float button {
   display: block;
   width: 100%;
   margin: 5px 0;
 }
 
-/* ============================
-   Contact Page - Dark Mode
-=============================== */
-
-/* Section Background */
-body.dark .contact-section {
-  background-color: #111827; /* gray-900 */
+/* ==========================
+   Buttons
+========================== */
+.whatsapp-share-btn {
+  background-color: #2563eb;
+  color: white;
 }
 
-/* Headings */
-body.dark .contact-section h2 {
-  color: #ffffff; /* white */
+.whatsapp-share-btn:hover {
+  background-color: #1d4ed8;
 }
 
-/* Subheadings / Paragraphs */
-body.dark .contact-section p {
-  color: #d1d5db; /* gray-300 */
+.chat-button {
+  background-color: #e5e7eb;
+  color: #1f2937;
 }
 
-/* Form Card */
-body.dark .contact-form,
-body.dark .contact-info {
-  background-color: #1f2937; /* gray-800 */
+.chat-button:hover {
+  background-color: #d1d5db;
 }
 
-/* Form Labels */
-body.dark .contact-form label {
-  color: #e5e7eb; /* gray-200 */
+/* ==========================
+   Badges
+========================== */
+
+
+
+.researcher-badge {
+  color: #173c6e;
+  background-color: #dbeafe;
+  font-weight: 900;
+  box-shadow: #059669 0px 0px 5px;
 }
 
-/* Form Inputs & Textareas */
-body.dark .contact-form input,
-body.dark .contact-form textarea {
-  background-color: #374151; /* gray-700 */
-  color: #ffffff; /* white */
-  border-color: #4b5563; /* gray-600 */
+.date-badge {
+  color: #166534;
+  background-color: #d1fae5;
+  box-shadow: #059669 0px 0px 5px;
 }
 
-/* Contact Info Text */
-body.dark .contact-info li {
-  color: #d1d5db; /* gray-300 */
-}
-
-/* Keep text-blue-600 unchanged, unless you want to override */
-body.dark .donation-section {
+/* ==========================
+   Dark Mode
+========================== */
+body.dark {
   background-color: #111827;
-}
-
-body.dark .donation-title {
-  color: #ffffff;
-}
-
-body.dark .donation-description,
-body.dark .form-label,
-body.dark .form-radio-label {
   color: #d1d5db;
 }
 
-body.dark .donation-form {
+body.dark nav,
+body.dark .contact-form,
+body.dark .contact-info,
+body.dark .donation-form,
+body.dark #sidebar {
   background-color: #1f2937;
 }
 
+body.dark nav a,
+body.dark .sidebar-link,
+body.dark .contact-info li,
+body.dark .contact-section p,
+body.dark .donation-description,
+body.dark .form-label,
+body.dark .form-radio-label,
+body.dark .read_more,
 body.dark .form-input {
+  color: #d1d5db;
+}
+
+body.dark nav a:hover,
+body.dark a:hover {
+  color: #60a5fa;
+}
+
+body.dark .sidebar-link:hover {
+  background-color: #374151;
+}
+
+body.dark h2,
+body.dark .contact-section h2,
+body.dark .donation-title {
+  background-color: #374151;
+  color: #ffffff;
+}
+
+body.dark input[type="text"] {
   background-color: #374151;
   border-color: #4b5563;
   color: #ffffff;
 }
 
-body.dark .donation-info {
-  background-color: #374151;
-  color: #f9fafb;
+body.dark input[type="text"]::placeholder {
+  color: #9ca3af;
 }
 
-/* Target the About Project section only when dark mode is active */
+body.dark button[type="submit"] {
+  background-color: #2563eb;
+  color: #ffffff;
+}
+
+body.dark button[type="submit"]:hover {
+  background-color: #1d4ed8;
+}
+
+body.dark #theme-toggle {
+  background-color: #374151;
+  color: #e5e7eb;
+}
+
+body.dark .floating-btn {
+  background-color: #10b981;
+  color: #ffffff;
+  border-color: transparent;
+}
+
+body.dark .floating-btn:hover {
+  background-color: #059669;
+}
+
+body.dark .research-card {
+  background-color: #1f2937;
+  border: 1px solid #374151;
+}
+
+body.dark .read_more:hover {
+  color: #93c5fd;
+}
+
+body.dark .whatsapp-share-btn {
+  background-color: #1e40af;
+}
+
+body.dark .whatsapp-share-btn:hover {
+  background-color: #1e3a8a;
+}
+
+body.dark .chat-button {
+  background-color: #374151;
+  color: #e5e7eb;
+}
+
+body.dark .chat-button:hover {
+  background-color: #4b5563;
+}
+
+body.dark .researcher-badge {
+  color: #93c5fd;
+  background-color: #1e3a8a;
+}
+
+body.dark .date-badge {
+  color: #86efac;
+  background-color: #064e3b;
+}
+
+/* ==========================
+   Contact Section - Dark
+========================== */
+body.dark .contact-section {
+  background-color: #111827;
+}
+
+/* ==========================
+   About Project Section - Dark
+========================== */
 body.dark section.about-project {
-  background-color: #0f172a; /* dark slate */
-  color: #f1f5f9; /* light text */
+  background-color: #0f172a;
+  color: #f1f5f9;
 }
 
 body.dark section.about-project h2,
 body.dark section.about-project h3 {
-  color: #ffffff; /* pure white */
+  color: #ffffff;
 }
 
 body.dark section.about-project p,
 body.dark section.about-project li {
-  color: #e2e8f0; /* soft gray */
+  color: #e2e8f0;
 }
 
 body.dark section.about-project .bg-white {
-  background-color: #1e293b; /* slightly lighter block background */
+  background-color: #1e293b;
 }
 
 body.dark section.about-project ul {
@@ -378,7 +316,7 @@ body.dark section.about-project ul {
 }
 
 body.dark section.about-project a {
-  color: #60a5fa; /* blue link */
+  color: #60a5fa;
 }
 
 body.dark section.about-project a:hover {
@@ -386,10 +324,12 @@ body.dark section.about-project a:hover {
   text-decoration: underline;
 }
 
-/* Dark mode colors scoped to pricing page section */
+/* ==========================
+   Pricing Page - Dark
+========================== */
 body.dark section.pricing-page {
-  background-color: #0f172a; /* dark slate bg */
-  color: #f8fafc; /* light text */
+  background-color: #0f172a;
+  color: #f8fafc;
 }
 
 body.dark section.pricing-page h1,
@@ -403,7 +343,7 @@ body.dark section.pricing-page p {
 }
 
 body.dark section.pricing-page .bg-white {
-  background-color: #1e293b; /* card background */
+  background-color: #1e293b;
 }
 
 body.dark section.pricing-page .text-gray-800 {
@@ -420,37 +360,4 @@ body.dark section.pricing-page .dark\:text-white {
 
 body.dark section.pricing-page .dark\:text-gray-300 {
   color: #d1d5db !important;
-}
-
-body.dark section.pricing-page .dark\:bg-gray-800 {
-  background-color: #1e293b !important;
-}
-
-body.dark section.pricing-page .bg-yellow-100 {
-  background-color: #facc15 !important;
-}
-
-body.dark section.pricing-page .border-yellow-500 {
-  border-color: #eab308 !important;
-}
-
-body.dark section.pricing-page .text-yellow-700 {
-  color: #78350f !important;
-}
-body.dark .payment-box {
-  background-color: #1e293b; /* dark bg */
-  border-color: #facc15;     /* soft yellow */
-  color: #f8fafc;            /* light text */
-}
-
-body.dark .payment-box h2 {
-  color: #facc15;            /* yellow title */
-}
-
-body.dark .payment-box ul li strong {
-  color: #facc15;            /* yellow for labels */
-}
-
-body.dark .payment-box p {
-  color: #e2e8f0;            /* soft light text */
 }

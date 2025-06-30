@@ -12,7 +12,7 @@
     <title>{% block title %}{% endblock %}</title>
     
 </head>
-<body class="bg-gray-100 dark:bg-gray-900 min-h-screen transition-colors duration-300 flex ">
+<body class="dark:bg-gray-900 min-h-screen transition-colors duration-300 flex ">
     
     <!-- general whatsapp chat button -->
     <button onclick="showChatPopup()" class="floating-btn">
@@ -60,12 +60,33 @@
             Resources
         </h2>
         <ul class="space-y-2">
-            <li><a href="{% url 'under_development' %}" class="sidebar-link flex items-center gap-2 px-4 text-sm text-gray-600 dark:text-gray-300 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition"><i class="fas fa-home"></i> Books-Introduction To Action Research</a></li>
-            <li><a href="{% url 'under_development' %}" class="sidebar-link flex items-center gap-2 px-4 text-sm text-gray-600 dark:text-gray-300 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition"><i class="fas fa-envelope"></i> Lesson Plans</a></li>
-            <li><a href="{% url 'under_development' %}" class="sidebar-link flex items-center gap-2 px-4 text-sm text-gray-600 dark:text-gray-300 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition"><i class="fas fa-tags"></i> Pricing</a></li>
-            <li><a href="{% url 'under_development' %}" class="sidebar-link flex items-center gap-2 px-4 text-sm text-gray-600 dark:text-gray-300 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition"><i class="fas fa-sign-in-alt"></i> Research Topics</a></li>
-            <li><a href="{% url 'under_development' %}" class="sidebar-link flex items-center gap-2 px-4 text-sm text-gray-600 dark:text-gray-300 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition"><i class="fas fa-user-plus"></i> Pass Questions</a></li>
-        </ul>
+            <li>
+              <a href="{% url 'under_development' %}" class="sidebar-link flex items-center gap-2 px-4 text-sm text-gray-600 dark:text-gray-300 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition">
+                <i class="fas fa-book-reader"></i> Books - Intro. To A. Research
+              </a>
+            </li>
+            <li>
+              <a href="{% url 'under_development' %}" class="sidebar-link flex items-center gap-2 px-4 text-sm text-gray-600 dark:text-gray-300 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition">
+                <i class="fas fa-file-alt"></i> Complete Sample Work
+              </a>
+            </li>
+            <li>
+              <a href="{% url 'under_development' %}" class="sidebar-link flex items-center gap-2 px-4 text-sm text-gray-600 dark:text-gray-300 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition">
+                <i class="fas fa-lightbulb"></i> Research Topics
+              </a>
+            </li>
+            <li>
+              <a href="{% url 'under_development' %}" class="sidebar-link flex items-center gap-2 px-4 text-sm text-gray-600 dark:text-gray-300 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition">
+                <i class="fas fa-hands-helping"></i> Contribute
+              </a>
+            </li>
+            <li>
+              <a href="{% url 'under_development' %}" class="sidebar-link flex items-center gap-2 px-4 text-sm text-gray-600 dark:text-gray-300 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition">
+                <i class="fas fa-university"></i> Institutional Formats
+              </a>
+            </li>
+          </ul>
+          
         <hr>
     </div>
 </aside>

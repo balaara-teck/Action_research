@@ -20,6 +20,7 @@ ALLOWED_HOSTS = ["*"]
 # Application definition
 
 INSTALLED_APPS = [
+    "jazzmin",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -29,6 +30,43 @@ INSTALLED_APPS = [
     "base_app.apps.BaseAppConfig",
   
 ]
+
+JAZZMIN_UI_TWEAKS = {
+    "theme": "darkly",  # Optional: themes like darkly, flatly, cyborg
+    "dark_mode_theme": "cyborg",  # For dark mode toggle
+    "navbar_small_text": False,
+    "footer_small_text": False,
+    "body_small_text": False,
+    "brand_small_text": False,
+    "brand_colour": "navbar-navy",  # Options: navbar-dark, navbar-info, navbar-purple etc.
+    "accent": "accent-primary",
+    "navbar": "navbar-navy navbar-dark",
+    "no_navbar_border": True,
+    "sidebar": "sidebar-dark-navy",
+    "sidebar_nav_small_text": False,
+    "sidebar_disable_expand": False,
+    "sidebar_nav_child_indent": True,
+    "sidebar_nav_compact_style": False,
+    "theme_color": "blue",  # Base theme color
+   # Replace with your logo path
+    "actions_sticky_top": True
+}
+JAZZMIN_SETTINGS = {
+    "site_title": "Research Hub",
+    "site_header": "Research Hub",
+    "site_brand": "Research Hub",
+    "welcome_sign": "Welcome to Research Hub!",
+    "copyright": "Research Hub",
+    "show_sidebar": True,
+    "navigation_expanded": True,
+    "site_logo": "../static/imagery/image.png",  # Place logo in static/images/
+    "login_logo": "../static/imagery/image.png", 
+    "site_logo_classes": "img-circle",
+    "search_model": ["auth.User", "app.ModelName"],  # Optional
+    "show_ui_builder": True,
+    "custom_css": "../static/styles/home.css",  # Path to your custom CSS
+}
+
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",

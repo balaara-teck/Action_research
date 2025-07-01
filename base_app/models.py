@@ -12,7 +12,7 @@ class FileModel(models.Model):
         ('Social', 'Social Studies'),
     ]
 
-    topic = models.CharField(max_length=100)
+    topic = models.CharField(max_length=200)
     field = models.CharField(max_length=100,choices=TOPIC_CHOICES, default='General')
     researcher = models.CharField(max_length=200)
     file = models.FileField()

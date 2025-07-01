@@ -5,11 +5,19 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  
 }
 
 body {
   font-family: 'Inter', sans-serif;
   transition: background-color 0.5s ease, color 0.6s ease, border-color 0.7s ease;
+  
+}
+
+.login_logo img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
 }
 
 /* ==========================
@@ -193,6 +201,7 @@ body.dark .form-label,
 body.dark .form-radio-label,
 body.dark .read_more,
 body.dark .form-input {
+ 
   color: #d1d5db;
 }
 
@@ -207,12 +216,15 @@ body.dark .sidebar-link:hover {
 
 body.dark h2,
 body.dark .contact-section h2,
+
 body.dark .donation-title {
   background-color: #374151;
   color: #ffffff;
 }
 
-body.dark input[type="text"] {
+body.dark input[type="text"] ,
+body.dark .contact-section textarea,
+body.dark .contact-section input[type="email"] {
   background-color: #374151;
   border-color: #4b5563;
   color: #ffffff;

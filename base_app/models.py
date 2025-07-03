@@ -18,6 +18,11 @@ class FileModel(models.Model):
     file = models.FileField()
     date_uploaded = models.DateTimeField(auto_now_add=True)
 
+    class Meta:
+        verbose_name = "Research File"
+        verbose_name_plural = "Research Files"
+        
+    
     def __str__(self):
         return f"{self.topic} \n By {self.researcher}"
     

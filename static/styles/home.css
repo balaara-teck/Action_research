@@ -162,7 +162,6 @@ body {
 ========================== */
 
 
-
 .researcher-badge {
   color: #173c6e;
   background-color: #dbeafe;
@@ -187,7 +186,8 @@ body.dark {
 body.dark nav,
 body.dark .contact-form,
 body.dark .contact-info,
-body.dark .donation-form,
+body.dark .donation-section,
+
 body.dark #sidebar {
   background-color: #1f2937;
 }
@@ -223,6 +223,7 @@ body.dark .donation-title {
 }
 
 body.dark input[type="text"] ,
+body.dark .donation-section input,
 body.dark .contact-section textarea,
 body.dark .contact-section input[type="email"] {
   background-color: #374151;

@@ -1,0 +1,29 @@
+{% extends "home.html" %}
+{% load static %}
+
+{% block title %}All Topics{% endblock %}
+
+{% block content %}
+<div class="px-1 py-6 sm:px-2 md:px-8 lg:px-10 max-w-6xl mx-auto">
+        <section class="mb-10  dark:bg-[#1e293b] border border-gray-200 dark:border-[#374151] shadow-md rounded-xl p-4 sm:p-6 lg:p-8 transition-all">
+            <h2 class="text-xl sm:text-2xl font-bold text-gray-800 dark:text-[#e2e8f0] mb-4 border-b border-gray-300 dark:border-[#374151] pb-2">
+                {{ field }}
+            </h2>
+                <ul class="space-y-3">
+                    {% for file in all_topics %}
+                        <li class="flex flex-col sm:flex-row justify-between items-start sm:items-center  dark:text-[#e2e8f0]  dark:bg-[#0f172a] py-2 rounded-md">
+                            <a href="{% url 'read' file.pk %}" class="font-medium">{{ file.topic }}</a>
+                            <!-- <span class="text-sm italic text-gray-500 dark:text-gray-400">{{ file.researcher }}</span> -->
+                        </li>
+                    {% endfor %}
+    
+                </ul>
+                <div class="mt-4 text-right">
+                    <a href="{% url 'all_topics' %}" class="text-blue-600 dark:text-blue-400 hover:underline">
+                        View All Topics
+                    </a>
+                </div>
+        </section>
+
+</div>
+{% endblock %}

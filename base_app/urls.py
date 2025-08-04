@@ -9,7 +9,10 @@ urlpatterns = [
     path("donate/", views.donate_view, name="donate"),
     path("about/", views.about_view, name="about"),
     path('coming-soon/', views.under_development_view, name='under_development'),
-    path('search/', views.search_files, name='search_files'),  # for ?q=
+    path('search/', views.search_files, name='search_files'), 
     path('search/<str:category>/', views.search_files, name='search_files'),
+    path('all_topics/', views.all_topics, name='all_topics'),
+    path('field_topic/<str:field>/', views.field_topics, name='field_topic'),
+
 
 ]

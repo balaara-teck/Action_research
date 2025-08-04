@@ -10,6 +10,7 @@ from django.http import HttpResponse
 from django.db.models import Q
 
 def search_files(request, category=""):
+    
     query = category or request.POST.get('q', '').strip()
     if query:
         uploaded_files = FileModel.objects.filter(
@@ -25,6 +26,16 @@ def search_files(request, category=""):
    
     else:
         return redirect('home')
+
+def field_topics(request,field):
+    all_topics = FileModel.objects.filter(
+        Q(field__icontains=field)
+        ).order_by('-date_uploaded')
+    
+    return render(request, "field_topics.html", {
+        "all_topics": all_topics,
+        "field": field
+    })
 
 def under_development_view(request):
     html = """
@@ -111,5 +122,15 @@ def Home(request):
         "trending_topics": trending_topics
     })
 
+def all_topics(request):
+    fields = ['Science', 'Technology', 'Mathematics', 'English', 'Languages', 'Social']
+    grouped_files = {}
+
+    for field in fields:
+        grouped_files[field] = FileModel.objects.filter(field=field).order_by('-date_uploaded')
+
+    return render(request, "all_topics.html", {
+        "grouped_files": grouped_files
+    })
 
 

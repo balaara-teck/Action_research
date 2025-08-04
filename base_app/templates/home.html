@@ -173,14 +173,27 @@
 
 <!-- Floating Share Options Popup -->
 <div id="shareOptionsFloat" class="fixed bottom-50 share-options-float right-6 bg-white p-4 rounded-lg shadow-lg space-y-2 hidden" id="shareOptionsFloat">
+    <!-- Button -->
+<button onclick="joinOurWhatsapp()" class="bg-green-500 text-white text-sm w-full py-2 px-3 rounded hover:bg-green-600 transition">
+    <i class="fab fa-whatsapp"></i> Join WhatsApp Group
+</button>
+
+<!-- Script -->
+<script>
+    function joinOurWhatsapp() {
+        const url = "https://chat.whatsapp.com/EKUVTLZXJbjJSs8l0d4dj5?mode=ac_t";
+        window.open(url, "_blank");
+    }
+</script>
+
     <button onclick="shareOnFacebook()" class="bg-blue-600 text-white text-sm w-full py-2 px-3 rounded hover:bg-blue-700 transition">
-        <i class="fab fa-facebook-f"></i> Facebook
+        <i class="fab fa-facebook-f"></i> Share On Facebook
     </button>
     <button onclick="shareOnTwitter()" class="bg-sky-500 text-white text-sm w-full py-2 px-3 rounded hover:bg-sky-600 transition">
-        <i class="fab fa-x-twitter"></i> Twitter
+        <i class="fab fa-x-twitter">X</i> Share On Twitter
     </button>
     <button onclick="shareOnWhatsApp()" class="bg-green-500 text-white text-sm w-full py-2 px-3 rounded hover:bg-green-600 transition">
-        <i class="fab fa-whatsapp"></i> WhatsApp
+        <i class="fab fa-whatsapp"></i> Share On WhatsApp
     </button>
     <button onclick="copyLink()" class="bg-gray-600 text-white text-sm w-full py-2 px-3 rounded hover:bg-gray-700 transition" id="copyLinkBtnFloat">
         <i class="fas fa-link"></i> Copy Link

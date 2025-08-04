@@ -28,16 +28,18 @@
 
         <!-- Inject trending topics after every 3 cards -->
         {% if show_topics and forloop.counter|divisibleby:5 %}
-        <div class="research-card mb-6 p-4 bg-white dark:bg-gray-800 rounded-lg shadow-md">
+        <div class="research-card mb-6 p-4 dark:bg-gray-800 rounded-lg shadow-md">
             <h2 class="text-lg font-bold text-gray-800 dark:text-white mb-3">🔥 Trending Topics</h2>
             <ul class="list-disc pl-5 space-y-1 text-sm text-gray-600 dark:text-gray-300">
-                {% for topic in trending_topics %}
-                    <li>{{ topic.title }}</li>
-                {% endfor %}
+                {% for file in uploaded_files|slice:":5" %}
+                <li>{{ file.topic|truncatewords:5 }}</li>
+            {% endfor %}
+            
             </ul>
             <div class="mt-3 text-right">
+                Want to see more?
                 <a href="/" class="text-blue-600 dark:text-blue-400 text-sm hover:underline">
-                    View More Topics →
+                    Click here
                 </a>
             </div>
         </div>

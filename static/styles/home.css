@@ -5,67 +5,83 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  
 }
 
 body {
-  font-family: 'Inter', sans-serif;
-  transition: background-color 0.5s ease, color 0.6s ease, border-color 0.7s ease;
-  
-}
-
-.login_logo img {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: #f9fafb;
+  color: #1f2937;
+  line-height: 1.5;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* ==========================
    Utility Classes
 ========================== */
 .avatar {
-  width: 40px;
-  height: 40px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
   object-fit: cover;
+  border: 2px solid #e5e7eb;
 }
 
-.read_more:hover {
-  color: blue;
-  text-decoration: underline;
+.login_logo img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 3px solid #e5e7eb;
 }
 
 .navbar-brand span {
-  font-size: 1.5rem;
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+
+.read_more {
+  transition: color 0.2s ease, text-decoration 0.2s ease;
+}
+
+.read_more:hover {
+  color: #1d4ed8;
+  text-decoration: underline;
 }
 
 /* ==========================
    Card Styling
 ========================== */
 .research-card {
-  box-shadow: #059669 -1px -1px 10px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  
 }
 
 .research-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
 }
 
 @media (max-width: 640px) {
   .research-card:hover {
     transform: none;
-    box-shadow: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06);
   }
 }
 
 /* ==========================
    Sidebar
 ========================== */
+.sidebar-link {
+  padding: 10px 16px;
+  border-radius: 8px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
 .sidebar-link:hover {
-  background-color: rgba(0, 0, 0, 0.05);
-  color: #2563eb;
+  background-color: #f1f5f9;
+  color: #1d4ed8;
 }
 
 /* ==========================
@@ -73,57 +89,64 @@ body {
 ========================== */
 .floating-btn {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background-color: gray;
-  color: black;
-  font-size: 24px;
-  width: 55px;
-  height: 55px;
+  bottom: 24px;
+  right: 24px;
+  background-color: #10b981;
+  color: #ffffff;
+  font-size: 20px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
-  border: 1px salmon solid;
-  text-align: center;
-  line-height: 55px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  text-decoration: none;
-  z-index: 999;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.floating-btn:hover {
+  background-color: #059669;
+  transform: scale(1.05);
 }
 
 .floating-share-btn {
   position: fixed;
-  bottom: 80px;
-  right: 25px;
-  width: 50px;
-  height: 50px;
+  bottom: 96px;
+  right: 24px;
+  width: 56px;
+  height: 56px;
   border-radius: 50%;
-  background-color: #007bff;
-  color: white;
+  background-color: #3b82f6;
+  color: #ffffff;
   border: none;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  cursor: pointer;
-  z-index: 1000;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .floating-share-btn:hover {
-  transform: scale(1.1);
+  background-color: #1d4ed8;
+  transform: scale(1.05);
 }
 
 .share-options-float {
   position: fixed;
-  bottom: 135px;
-  right: 20px;
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  padding: 10px;
-  display: none;
+  bottom: 168px;
+  right: 24px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  padding: 12px;
   z-index: 1000;
+  display: none;
+  min-width: 160px;
 }
 
 .share-options-float.show {
@@ -131,65 +154,79 @@ body {
 }
 
 .share-options-float button {
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: 8px;
   width: 100%;
-  margin: 5px 0;
+  padding: 10px;
+  margin: 4px 0;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
 }
 
 /* ==========================
    Buttons
 ========================== */
 .whatsapp-share-btn {
-  background-color: #2563eb;
-  color: white;
+  background-color: #25d366;
+  color: #ffffff;
 }
 
 .whatsapp-share-btn:hover {
-  background-color: #1d4ed8;
+  background-color: #20b058;
 }
 
 .chat-button {
-  background-color: #e5e7eb;
+  background-color: #f3f4f6;
   color: #1f2937;
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
 }
 
 .chat-button:hover {
-  background-color: #d1d5db;
+  background-color: #e5e7eb;
 }
 
 /* ==========================
    Badges
 ========================== */
-
-
-
 .researcher-badge {
-  color: #173c6e;
+  color: #1e3a8a;
   background-color: #dbeafe;
-  font-weight: 900;
-  box-shadow: #059669 0px 0px 5px;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 16px;
+  font-size: 12px;
 }
 
 .date-badge {
   color: #166534;
   background-color: #d1fae5;
-  box-shadow: #059669 0px 0px 5px;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 16px;
+  font-size: 12px;
 }
 
 /* ==========================
    Dark Mode
 ========================== */
 body.dark {
-  background-color: #111827;
-  color: #d1d5db;
+  background-color: #0f172a;
+  color: #e2e8f0;
 }
 
 body.dark nav,
 body.dark .contact-form,
 body.dark .contact-info,
-body.dark .donation-form,
+body.dark .donation-section,
 body.dark #sidebar {
-  background-color: #1f2937;
+  background-color: #1e293b;
+  border-color: #374151;
 }
 
 body.dark nav a,
@@ -201,41 +238,41 @@ body.dark .form-label,
 body.dark .form-radio-label,
 body.dark .read_more,
 body.dark .form-input {
- 
   color: #d1d5db;
 }
 
 body.dark nav a:hover,
 body.dark a:hover {
-  color: #60a5fa;
+  color: #93c5fd;
 }
 
 body.dark .sidebar-link:hover {
-  background-color: #374151;
+  background-color: #334155;
+  color: #93c5fd;
 }
 
 body.dark h2,
 body.dark .contact-section h2,
-
 body.dark .donation-title {
-  background-color: #374151;
-  color: #ffffff;
+  background-color: #1e293b;
+  color: #f9fafb;
 }
 
-body.dark input[type="text"] ,
+body.dark input[type="text"],
+body.dark .donation-section input,
 body.dark .contact-section textarea,
 body.dark .contact-section input[type="email"] {
-  background-color: #374151;
+  background-color: #1e293b;
   border-color: #4b5563;
-  color: #ffffff;
+  color: #e2e8f0;
 }
 
 body.dark input[type="text"]::placeholder {
-  color: #9ca3af;
+  color: #6b7280;
 }
 
 body.dark button[type="submit"] {
-  background-color: #2563eb;
+  background-color: #3b82f6;
   color: #ffffff;
 }
 
@@ -244,14 +281,14 @@ body.dark button[type="submit"]:hover {
 }
 
 body.dark #theme-toggle {
-  background-color: #374151;
-  color: #e5e7eb;
+  background-color: #1e293b;
+  color: #e2e8f0;
 }
 
 body.dark .floating-btn {
   background-color: #10b981;
   color: #ffffff;
-  border-color: transparent;
+  border: none;
 }
 
 body.dark .floating-btn:hover {
@@ -259,7 +296,7 @@ body.dark .floating-btn:hover {
 }
 
 body.dark .research-card {
-  background-color: #1f2937;
+  background-color: #1e293b;
   border: 1px solid #374151;
 }
 
@@ -268,37 +305,37 @@ body.dark .read_more:hover {
 }
 
 body.dark .whatsapp-share-btn {
-  background-color: #1e40af;
+  background-color: #25d366;
 }
 
 body.dark .whatsapp-share-btn:hover {
-  background-color: #1e3a8a;
+  background-color: #20b058;
 }
 
 body.dark .chat-button {
-  background-color: #374151;
-  color: #e5e7eb;
+  background-color: #1e293b;
+  color: #e2e8f0;
 }
 
 body.dark .chat-button:hover {
-  background-color: #4b5563;
+  background-color: #334155;
 }
 
 body.dark .researcher-badge {
-  color: #93c5fd;
+  color: #bfdbfe;
   background-color: #1e3a8a;
 }
 
 body.dark .date-badge {
   color: #86efac;
-  background-color: #064e3b;
+  background-color: #065f46;
 }
 
 /* ==========================
    Contact Section - Dark
 ========================== */
 body.dark .contact-section {
-  background-color: #111827;
+  background-color: #0f172a;
 }
 
 /* ==========================
@@ -306,17 +343,17 @@ body.dark .contact-section {
 ========================== */
 body.dark section.about-project {
   background-color: #0f172a;
-  color: #f1f5f9;
+  color: #e2e8f0;
 }
 
 body.dark section.about-project h2,
 body.dark section.about-project h3 {
-  color: #ffffff;
+  color: #f9fafb;
 }
 
 body.dark section.about-project p,
 body.dark section.about-project li {
-  color: #e2e8f0;
+  color: #d1d5db;
 }
 
 body.dark section.about-project .bg-white {
@@ -324,16 +361,15 @@ body.dark section.about-project .bg-white {
 }
 
 body.dark section.about-project ul {
-  color: #cbd5e1;
+  color: #d1d5db;
 }
 
 body.dark section.about-project a {
-  color: #60a5fa;
+  color: #93c5fd;
 }
 
 body.dark section.about-project a:hover {
   color: #3b82f6;
-  text-decoration: underline;
 }
 
 /* ==========================
@@ -341,17 +377,17 @@ body.dark section.about-project a:hover {
 ========================== */
 body.dark section.pricing-page {
   background-color: #0f172a;
-  color: #f8fafc;
+  color: #e2e8f0;
 }
 
 body.dark section.pricing-page h1,
 body.dark section.pricing-page h2,
 body.dark section.pricing-page h3 {
-  color: #ffffff;
+  color: #f9fafb;
 }
 
 body.dark section.pricing-page p {
-  color: #cbd5e1;
+  color: #d1d5db;
 }
 
 body.dark section.pricing-page .bg-white {
@@ -359,15 +395,15 @@ body.dark section.pricing-page .bg-white {
 }
 
 body.dark section.pricing-page .text-gray-800 {
-  color: #f8fafc !important;
+  color: #e2e8f0 !important;
 }
 
 body.dark section.pricing-page .text-gray-600 {
-  color: #94a3b8 !important;
+  color: #9ca3af !important;
 }
 
 body.dark section.pricing-page .dark\:text-white {
-  color: #ffffff !important;
+  color: #f9fafb !important;
 }
 
 body.dark section.pricing-page .dark\:text-gray-300 {

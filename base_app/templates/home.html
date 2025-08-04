@@ -114,7 +114,7 @@
             class="hidden lg:flex items-center md:ml-6 transition-all duration-300 ease-in-out" id="search-form">
             {% csrf_token %}
             <input type="text" name="q" placeholder="Search..."
-                class=" bg-gray-100 w-36 md:w-48 lg:w-64 px-3 py-2 rounded-l-md border border-gray-300 dark:border-gray-700 dark:bg-gray-700 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                class=" bg-gray-100 w-36 md:w-48 lg:w-64 px-3 py-2 rounded-l-md border border-gray-300 dark:border-gray-700 dark:bg-gray-700 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500" required/>
             <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white px-3 py-2 rounded-r-md">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2"
                 viewBox="0 0 24 24">
@@ -201,7 +201,7 @@
                 <h3 class="text-lg font-semibold text-white mb-4">Navigation</h3>
                 <ul class="space-y-2">
                     <li><a href="{% url 'home' %}" class="text-sm text-gray-400 hover:text-blue-400 transition">Home</a></li>
-                    <li><a href="#" class="text-sm text-gray-400 hover:text-blue-400 transition">Topics</a></li>
+                    <li><a href="{% url 'all_topics' %}" class="text-sm text-gray-400 hover:text-blue-400 transition">Topics</a></li>
                     <li><a href="{% url 'about' %}" class="text-sm text-gray-400 hover:text-blue-400 transition">About</a></li>
                     <li><a href="{% url 'contact' %}" class="text-sm text-gray-400 hover:text-blue-400 transition">Contact</a></li>
                 </ul>
@@ -277,10 +277,10 @@
         searchToggle.addEventListener("click", () => {
         if (searchForm.classList.contains("hidden")) {
             searchForm.classList.remove("hidden");
-            searchForm.classList.add("absolute", "top-16", "left-4", "right-4", "bg-white", "dark:bg-gray-800", "p-2", "rounded-md", "z-50", "shadow-lg", "flex");
+            searchForm.classList.add("absolute", "top-16", "left-4", "right-4", "bg-white", "dark:bg-gray-800", "p-2", "rounded-md", "z-50", "shadow-lg", "flex" , "w-full");
         } else {
             searchForm.classList.add("hidden");
-            searchForm.classList.remove("absolute", "top-16", "left-4", "right-4", "bg-white", "dark:bg-gray-800", "p-2", "rounded-md", "z-50", "shadow-lg", "flex");
+            searchForm.classList.remove("absolute", "top-16", "left-4", "right-4", "bg-white", "dark:bg-gray-800", "p-2", "rounded-md", "z-50", "shadow-lg", "flex","w-full");
         }
         });
     </script>
@@ -301,7 +301,16 @@
         document.body.classList.add('dark');
       }
     });
-  </script>
+
+
+    // join Our Whatsapp
+    
+    function joinOurWhatsapp() {
+        const url = "https://chat.whatsapp.com/EKUVTLZXJbjJSs8l0d4dj5?mode=ac_t";
+        window.open(url, "_blank");
+    }
+</script>
+ 
   
   
     

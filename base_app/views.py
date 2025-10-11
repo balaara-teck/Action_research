@@ -7,7 +7,13 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.http import HttpResponse
 from django.http import HttpResponse
-from django.db.models import Q
+from django.db.models import Q   
+
+def custom_404_view(request, exception=None):
+    return render(request, '404.html', status=404)
+
+handler404 = custom_404_view
+
 
 def search_files(request, category=""):
     

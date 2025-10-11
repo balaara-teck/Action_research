@@ -74,7 +74,7 @@ body {
    Sidebar
 ========================== */
 .sidebar-link {
-  padding: 10px 16px;
+  padding: 5px 10px;
   border-radius: 8px;
   transition: background-color 0.2s ease, color 0.2s ease;
 }

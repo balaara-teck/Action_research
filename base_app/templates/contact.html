@@ -10,6 +10,36 @@
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+      <!-- Contact Info -->
+
+      <div class="contact-info bg-white dark:bg-gray-800 shadow-md rounded-lg p-6">
+        <h3 class="text-2xl font-semibold text-gray-800 dark:text-white mb-4">Our Info</h3>
+        <ul class="space-y-4 text-gray-700 dark:text-gray-300">
+          <li>
+            <i class="fas fa-map-marker-alt mr-2 text-blue-600"></i>
+            123 College Street, Offuman, Ghana
+          </li>
+          <li>
+            <i class="fas fa-envelope mr-2 text-blue-600"></i>
+            <a href="mailto:ar4tts@gmail.com" class="text-blue-600 hover:underline">Mail Us</a>
+          </li>
+          <li>
+            <i class="fab fa-whatsapp mr-2 text-green-500"></i>
+            <button onclick="ChatOnWhatsApp()" class="hover:underline">+233 27 421 6832</button>
+          </li>
+          <li>
+            <i class="fas fa-sms mr-2 text-blue-600"></i>
+            <button onclick="ChatOnSMS()" class="hover:underline">
+                +233 531 164 548
+            </button>
+          
+          </li>
+          <li>
+            <i class="fas fa-clock mr-2 text-blue-600"></i>
+            Sun - Sat: 8am - 10pm
+          </li>
+        </ul>
+      </div>
       <!-- Contact Form -->
       <form action="{% url 'contact' %}" method="post" class="contact-form bg-white dark:bg-gray-800 shadow-md rounded-lg p-6">
         {% csrf_token %}
@@ -27,33 +57,7 @@
         </div>
         <button type="submit" class="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition">Send Message</button>
       </form>
-
-      <!-- Contact Info -->
-      <div class="contact-info bg-white dark:bg-gray-800 shadow-md rounded-lg p-6">
-        <h3 class="text-2xl font-semibold text-gray-800 dark:text-white mb-4">Our Info</h3>
-        <ul class="space-y-4 text-gray-700 dark:text-gray-300">
-          <li>
-            <i class="fas fa-map-marker-alt mr-2 text-blue-600"></i>
-            123 College Street, Accra, Ghana
-          </li>
-          <li>
-            <i class="fas fa-envelope mr-2 text-blue-600"></i>
-            <a href="mailto:ar4tts@gmail.com" class="text-blue-600 hover:underline">Mail Us</a>
-          </li>
-          <li>
-            <i class="fab fa-whatsapp mr-2 text-green-500"></i>
-            +233 266 342 915
-          </li>
-          <li>
-            <i class="fas fa-sms mr-2 text-blue-600"></i>
-            +233 531 164 548
-          </li>
-          <li>
-            <i class="fas fa-clock mr-2 text-blue-600"></i>
-            Sun - Sat: 8am - 10pm
-          </li>
-        </ul>
-      </div>
+      
     </div>
   </div>
 </section>

@@ -17,14 +17,25 @@ function changeText() {
 setInterval(changeText, 5000);
 changeText();
 
-
+// for sms communications
+function ChatOnSMS() {
+  const title = "Hello Sir, I need help with my project, please.";
+  // ✅ Remove the plus sign — most mobile browsers expect plain digits
+  const phoneNumber = "233531164548"; // Ghana number without '+'
+  const smsUrl = `sms:${phoneNumber}?body=${decodeURIComponent(
+    title
+  )}`;
+  window.location.href = smsUrl;
+}
 
 // for whatsapp communications
-function showChatPopup() {
-    const confirmChat = confirm("Do you want to chat Project Analyst for your project?\nUnable to open Whatsapp automatically, chat manually on 0266342915");
+function ChatOnWhatsApp() {
+    const confirmChat = confirm(
+      "Do you want to chat Project Analyst for your project?\nUnable to open Whatsapp automatically, chat manually on 0274216832"
+    );
     if (!confirmChat) return;
 
-    const phone = "233266342915";
+    const phone = "233274216832";
     const message = encodeURIComponent("Hello Sir, I need help with my project, please.");
     const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
@@ -36,23 +47,34 @@ function showChatPopup() {
       const iframe = document.createElement('iframe');
       iframe.style.display = 'none';
       iframe.src = desktopUrl;
-
+      
       document.body.appendChild(iframe);
       setTimeout(() => {
         window.open(webUrl, '_blank');
         document.body.removeChild(iframe);
-      }, 2000);
+      }, 2000); 
     }
   }
 // Floating Share Button functionality
-   function getShareContent() {
-    const title = "Explore smart ideas and deep research – only on Research Hub!"; // Customize this as needed
-    const url = window.location.href; // Dynamically get the current page URL
+  function getShareContent() {
+    const title = "Dear friend, you can also learn alot from this site as teacher trainee Visit "; // You can customize this
+    const url = window.location.href; // Dynamically gets the current page URL
     return {
-        title: encodeURIComponent(title),
-        url: encodeURIComponent(url)
+      title: encodeURIComponent(title),
+      url: encodeURIComponent(url),
     };
-}
+  }
+
+// Function to share via SMS
+  function shareOnSMS() {
+    const { url, title } = getShareContent();
+    // ✅ No phone number — allows the user to choose a contact
+    const smsUrl = `sms:?body=${decodeURIComponent(title)}${decodeURIComponent(
+      url
+    )}`;
+    window.location.href = smsUrl; // Opens the SMS app with pre-filled text
+  }
+
 
 
 // Function to share on Facebook
@@ -80,7 +102,7 @@ function shareOnWhatsApp() {
 function copyLink() {
     const { url, title } = getShareContent();
     const textToCopy = `${decodeURIComponent(title)}\n${decodeURIComponent(url)}`;
-
+    
     navigator.clipboard.writeText(textToCopy).then(() => {
         const copyBtn = document.getElementById('copyLinkBtnFloat');
         const originalText = copyBtn.innerHTML;
@@ -103,12 +125,13 @@ function copyLink() {
     document.addEventListener('click', function(event) {
         const shareOptions = document.getElementById('shareOptionsFloat');
         const floatingShareBtn = document.querySelector('.floating-share-btn');
-
+        
         if (!shareOptions.contains(event.target) && !floatingShareBtn.contains(event.target)) {
             shareOptions.classList.remove('show');
         }
     });
 
+    
 
 
-
+ 

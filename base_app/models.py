@@ -16,6 +16,7 @@ class FileModel(models.Model):
     field = models.CharField(max_length=100,choices=TOPIC_CHOICES, default='General')
     researcher = models.CharField(max_length=200)
     file = models.FileField()
+    chapter = models.CharField(max_length=200, default="Loading...")
     date_uploaded = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):

@@ -36,23 +36,24 @@ function showChatPopup() {
       const iframe = document.createElement('iframe');
       iframe.style.display = 'none';
       iframe.src = desktopUrl;
-      
+
       document.body.appendChild(iframe);
       setTimeout(() => {
         window.open(webUrl, '_blank');
         document.body.removeChild(iframe);
-      }, 2000); 
+      }, 2000);
     }
   }
 // Floating Share Button functionality
    function getShareContent() {
-    const title = "Check out this awesome site!"; // You can customize this
-    const url = "http://0.0.0.0:8000/"; // Static URL for sharing
+    const title = "Explore smart ideas and deep research – only on Research Hub!"; // Customize this as needed
+    const url = window.location.href; // Dynamically get the current page URL
     return {
         title: encodeURIComponent(title),
         url: encodeURIComponent(url)
     };
 }
+
 
 // Function to share on Facebook
 function shareOnFacebook() {
@@ -79,7 +80,7 @@ function shareOnWhatsApp() {
 function copyLink() {
     const { url, title } = getShareContent();
     const textToCopy = `${decodeURIComponent(title)}\n${decodeURIComponent(url)}`;
-    
+
     navigator.clipboard.writeText(textToCopy).then(() => {
         const copyBtn = document.getElementById('copyLinkBtnFloat');
         const originalText = copyBtn.innerHTML;
@@ -102,13 +103,12 @@ function copyLink() {
     document.addEventListener('click', function(event) {
         const shareOptions = document.getElementById('shareOptionsFloat');
         const floatingShareBtn = document.querySelector('.floating-share-btn');
-        
+
         if (!shareOptions.contains(event.target) && !floatingShareBtn.contains(event.target)) {
             shareOptions.classList.remove('show');
         }
     });
 
-    
 
 
- 
+

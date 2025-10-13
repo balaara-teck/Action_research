@@ -57,7 +57,7 @@ function ChatOnWhatsApp() {
   }
 // Floating Share Button functionality
   function getShareContent() {
-    const title = "Dear friend, you can also learn alot from this site as teacher trainee Visit "; // You can customize this
+    const title = "Hello dear friend, you can learn about action research from this site as a teacher trainee.\nWhatsapp the site at 0274216832 or visit "; // You can customize this
     const url = window.location.href; // Dynamically gets the current page URL
     return {
       title: encodeURIComponent(title),

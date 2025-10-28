@@ -13,6 +13,7 @@ urlpatterns = [
     path('search/<str:category>/', views.search_files, name='search_files'),
     path('all_topics/', views.all_topics, name='all_topics'),
     path('field_topic/<str:field>/', views.field_topics, name='field_topic'),
+     path('load-more/', views.load_more_files, name='load_more_files'),
 
 
 ]

@@ -7,7 +7,9 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.http import HttpResponse
 from django.http import HttpResponse
-from django.db.models import Q   
+from django.db.models import Q  
+from django.http import JsonResponse
+from django.core import serializers 
 
 def custom_404_view(request, exception=None):
     return render(request, '404.html', status=404)
@@ -112,14 +114,13 @@ def Pricing(request):
 
 
 def Home(request):
-    total_files = random.choice([5, 6, 7, 8, 9, 8, 9, 8, 9])
-    uploaded_files = list(FileModel.objects.all().order_by('?'))[:total_files]
+    # Fetch all files in random order
+    uploaded_files = list(FileModel.objects.all().order_by('?'))
 
+    # Randomly decide whether to show topics or projects
     choice = random.choice(["topics", "projects"])
 
-    if total_files < 6:
-        choice = "topics"
-    
+    # Randomly pick trending topics if choice is topics
     trending_topics = list(FileModel.objects.all().order_by('?'))[:2] if choice == "topics" else []
 
     return render(request, "index.html", {
@@ -127,6 +128,21 @@ def Home(request):
         "show_topics": choice == "topics",
         "trending_topics": trending_topics
     })
+
+
+
+def load_more_files(request):
+    import random
+    from .models import FileModel
+
+    limit = int(request.GET.get('limit', 5))
+    offset = int(request.GET.get('offset', 0))
+
+    # Randomize results each time
+    files = list(FileModel.objects.all().order_by('?'))[:limit]
+
+    data = serializers.serialize('json', files)
+    return JsonResponse({'files': data})
 
 def all_topics(request):
     fields = ['Science', 'Technology', 'Mathematics', 'English', 'Languages', 'Social']

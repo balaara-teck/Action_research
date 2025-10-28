@@ -11,7 +11,7 @@
             </h2>
                 <ul class="space-y-3">
                     {% for file in all_topics %}
-                        <li class="flex flex-col sm:flex-row justify-between items-start sm:items-center  dark:text-[#e2e8f0]  dark:bg-[#0f172a] py-2 rounded-md">
+                        <li class=" hover:text-blue-500 transition duration-200 flex flex-col sm:flex-row justify-between items-start sm:items-center  dark:text-[#e2e8f0]  dark:bg-[#0f172a] py-2 rounded-md">
                             <a href="{% url 'read' file.pk %}" class="font-medium">{{ file.topic }}</a>
                             <!-- <span class="text-sm italic text-gray-500 dark:text-gray-400">{{ file.researcher }}</span> -->
                         </li>

@@ -94,6 +94,8 @@ def contact_view(request):
 
 def File_reader(request, pk):
     file_instance = get_object_or_404(FileModel, id=pk)
+    if not file_instance.file:
+        return redirect("under_development")
     file_path = file_instance.file.path
     file_name = file_instance.file.name
     file_ext = os.path.splitext(file_name)[1].lower()

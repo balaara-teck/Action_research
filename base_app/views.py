@@ -114,6 +114,17 @@ def File_reader(request, pk):
 def Pricing(request):
     return render(request, "price.html")
 
+def File_detail(request, pk):
+    file_instance = get_object_or_404(FileModel, id=pk)
+
+    context = {
+        "file": file_instance,
+        "seo_title": f"{file_instance.topic} | CollegeBox",
+        "seo_description": f"Action research on {file_instance.field} by {file_instance.researcher or 'an aspiring teacher trainee'}.",
+        "seo_url": request.build_absolute_uri(),
+    }
+
+    return render(request, "file_detail.html", context)
 
 def Home(request):
     # Fetch all files in random order

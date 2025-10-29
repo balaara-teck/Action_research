@@ -25,7 +25,7 @@ urlpatterns = [
     path('field_topic/<str:field>/', views.field_topics, name='field_topic'),
     path('load-more/', views.load_more_files, name='load_more_files'),
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
-
+    path("files/<int:pk>/", views.File_detail, name="file_detail")
 
 ]
 

@@ -1,5 +1,14 @@
 from django.urls import path
 from . import views
+from django.contrib.sitemaps.views import sitemap
+from .sitemaps import PostSitemap, StaticViewSitemap
+
+sitemaps = {
+    'posts': PostSitemap,
+    'static': StaticViewSitemap,
+}
+
+
 
 urlpatterns = [
     path("", views.Home, name="home"),
@@ -13,7 +22,8 @@ urlpatterns = [
     path('search/<str:category>/', views.search_files, name='search_files'),
     path('all_topics/', views.all_topics, name='all_topics'),
     path('field_topic/<str:field>/', views.field_topics, name='field_topic'),
-     path('load-more/', views.load_more_files, name='load_more_files'),
+    path('load-more/', views.load_more_files, name='load_more_files'),
+    path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
 
 
 ]

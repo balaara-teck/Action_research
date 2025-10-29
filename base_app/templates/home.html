@@ -2,25 +2,62 @@
 {% load static %}
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="{% static 'styles/home.css' %}" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-    />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="icon"
-      type="image/x-icon"
-      href="{% static 'imagery/favicon.ico' %}"
-    />
-    <title>{% block title %}{% endblock %} | CollegeBox</title>
-  </head>
+  <!-- Basic Meta Tags -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO Title & Description -->
+  <title>{% block title %}{% endblock %} | CollegeBox - Action Research for Teacher Trainees</title>
+  <meta
+    name="description"
+    content="CollegeBox is a blog platform dedicated to publishing action research, resources, and insights for aspiring teacher trainees in Colleges of Education and universities."
+  />
+  <meta name="google-site-verification" content="hks5acJoOP43g1o2xCZS-88yNqt4lsMybldJBQtrDtA" />
+
+  <!-- Keywords -->
+  <meta
+    name="keywords"
+    content="CollegeBox, action research, teacher trainees, education research, colleges of education, teacher training, educational blog, Ghana education, university research"
+  />
+
+  <!-- Author -->
+  <meta name="author" content="CollegeBox Team" />
+
+  <!-- Robots Tag (for indexing) -->
+  <meta name="robots" content="index, follow" />
+
+  <!-- Canonical URL (prevents duplicate content issues) -->
+  <link rel="canonical" href="https://www.collegebox.com/" />
+
+  <!-- Open Graph (for social media sharing) -->
+  <meta property="og:title" content="CollegeBox - Action Research for Teacher Trainees" />
+  <meta property="og:description" content="Explore insightful action research and educational resources tailored for teacher trainees." />
+  <meta property="og:image" content="{% static 'imagery/collegebox-preview.jpg' %}" />
+  <meta property="og:url" content="https://www.collegebox.com/" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter Card (for Twitter sharing) -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="CollegeBox - Action Research for Teacher Trainees" />
+  <meta name="twitter:description" content="A blog for aspiring teachers, sharing valuable research and training resources." />
+  <meta name="twitter:image" content="{% static 'imagery/collegebox-preview.png' %}" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="{% static 'imagery/favicon.ico' %}" />
+
+  <!-- Stylesheets & Fonts -->
+  <link rel="stylesheet" href="{% static 'styles/home.css' %}" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+  />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+    rel="stylesheet"
+  />
+</head>
+
   <body
     class="dark:bg-gray-900 min-h-screen transition-colors duration-300 flex"
   >

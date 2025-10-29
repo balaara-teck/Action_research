@@ -6,57 +6,71 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- SEO Title & Description -->
-  <title>{% block title %}{% endblock %} | CollegeBox - Action Research for Teacher Trainees</title>
+  <!-- SEO Title & Description (Dynamic Ready) -->
+  <title>{% block title %}{{ seo_title|default:"CollegeBox - Action Research for Teacher Trainees" }}{% endblock %}</title>
   <meta
     name="description"
-    content="CollegeBox is a blog platform dedicated to publishing action research, resources, and insights for aspiring teacher trainees in Colleges of Education and universities."
+    content="{{ seo_description|default:'CollegeBox publishes action research, educational resources, and insights for aspiring teacher trainees in Colleges of Education and universities.' }}"
   />
+
+  <!-- Google Site Verification -->
   <meta name="google-site-verification" content="hks5acJoOP43g1o2xCZS-88yNqt4lsMybldJBQtrDtA" />
 
   <!-- Keywords -->
   <meta
     name="keywords"
-    content="CollegeBox, action research, teacher trainees, education research, colleges of education, teacher training, educational blog, Ghana education, university research"
+    content="CollegeBox, action research, teacher trainees, education research, colleges of education, teacher training, Ghana education, university research"
   />
 
-  <!-- Author -->
+  <!-- Author & Robots -->
   <meta name="author" content="CollegeBox Team" />
-
-  <!-- Robots Tag (for indexing) -->
   <meta name="robots" content="index, follow" />
 
-  <!-- Canonical URL (prevents duplicate content issues) -->
-  <link rel="canonical" href="https://www.collegebox.com/" />
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://ar4tts.pythonanywhere.com/" />
 
-  <!-- Open Graph (for social media sharing) -->
-  <meta property="og:title" content="CollegeBox - Action Research for Teacher Trainees" />
-  <meta property="og:description" content="Explore insightful action research and educational resources tailored for teacher trainees." />
+  <!-- Open Graph (Facebook, LinkedIn, etc.) -->
+  <meta property="og:title" content="{{ seo_title|default:'CollegeBox - Action Research for Teacher Trainees' }}" />
+  <meta property="og:description" content="{{ seo_description|default:'Explore insightful action research and educational resources tailored for teacher trainees.' }}" />
   <meta property="og:image" content="{% static 'imagery/collegebox-preview.jpg' %}" />
-  <meta property="og:url" content="https://www.collegebox.com/" />
+  <meta property="og:url" content="{{ seo_url|default:request.build_absolute_uri }}" />
   <meta property="og:type" content="website" />
 
-  <!-- Twitter Card (for Twitter sharing) -->
+  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="CollegeBox - Action Research for Teacher Trainees" />
-  <meta name="twitter:description" content="A blog for aspiring teachers, sharing valuable research and training resources." />
+  <meta name="twitter:title" content="{{ seo_title|default:'CollegeBox - Action Research for Teacher Trainees' }}" />
+  <meta name="twitter:description" content="{{ seo_description|default:'A blog for aspiring teachers, sharing valuable research and training resources.' }}" />
   <meta name="twitter:image" content="{% static 'imagery/collegebox-preview.png' %}" />
+
+  <!-- Structured Data (helps Google understand your blog) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "CollegeBox",
+    "url": "https://ar4tts.pythonanywhere.com/",
+    "description": "A blog platform for action research and educational insights for teacher trainees.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "CollegeBox",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://ar4tts.pythonanywhere.com/static/imagery/collegebox-preview.png"
+      }
+    }
+  }
+  </script>
 
   <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="{% static 'imagery/favicon.ico' %}" />
 
-  <!-- Stylesheets & Fonts -->
+  <!-- Styles & Fonts -->
   <link rel="stylesheet" href="{% static 'styles/home.css' %}" />
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-  />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
   <script src="https://cdn.tailwindcss.com"></script>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
-    rel="stylesheet"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
 </head>
+
 
   <body
     class="dark:bg-gray-900 min-h-screen transition-colors duration-300 flex"

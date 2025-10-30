@@ -41,7 +41,7 @@
   <!-- Open Graph (Facebook, LinkedIn, etc.) -->
   <meta property="og:title" content="{{ seo_title|default:'CollegeBox - Action Research for Teacher Trainees' }}" />
   <meta property="og:description" content="{{ seo_description|default:'Explore insightful action research and educational resources tailored for teacher trainees.' }}" />
-  <meta property="og:image" content="{% static 'imagery/collegebox-preview.jpg' %}" />
+  <meta property="og:image" content="{% static 'imagery/collegebox-preview.png' %}" />
   <meta property="og:url" content="{{ seo_url|default:request.build_absolute_uri }}" />
   <meta property="og:type" content="website" />
 
@@ -53,21 +53,21 @@
 
   <!-- Structured Data (helps Google understand your blog) -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Blog",
-    "name": "CollegeBox",
-    "url": "https://ar4tts.pythonanywhere.com/",
-    "description": "A blog platform for action research and educational insights for teacher trainees.",
-    "publisher": {
-      "@type": "Organization",
+    {
+      "@context": "https://schema.org",
+      "@type": "Blog",
       "name": "CollegeBox",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://ar4tts.pythonanywhere.com/static/imagery/collegebox-preview.png"
+      "url": "https://ar4tts.pythonanywhere.com/",
+      "description": "A blog platform for action research and educational insights for teacher trainees.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "CollegeBox",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://ar4tts.pythonanywhere.com/static/imagery/collegebox-preview.png"
+        }
       }
     }
-  }
   </script>
 
   <!-- Favicon -->
